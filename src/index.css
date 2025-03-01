@@ -16,6 +16,8 @@ body.dark-mode {
   --gray-dark: #fff;
   --background-soft: #141d2f;
   --background-light: #1e2a47;
+
+  --a: rgb(143,163,211)
 }
 
 /* 1. Use a more-intuitive box-sizing model */

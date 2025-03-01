@@ -39,6 +39,7 @@ const Input = styled.input`
   flex: 1;
   padding-right: 1rem;
   color: var(--gray-dark);
+  caret-color: var(--primary-blue);
 
   &::placeholder {
     color: var(--gray-medium);
@@ -83,6 +84,12 @@ const SearchButton = styled.button`
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: bold;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgb(96, 171, 255);
+  }
 
   @media (max-width: 550px) {
     padding: 0.45rem 0.95rem;

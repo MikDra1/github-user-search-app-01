@@ -159,8 +159,13 @@ const InfoContainer = styled.div`
   & a {
     color: ${({ isAvailable }) =>
       isAvailable ? "var(--gray-medium)" : "var(--text-not-available)"};
-    text-decoration: ${({ isAvailable }) =>
+      text-decoration: none;
+
+
+      &:hover {
+        text-decoration: ${({ isAvailable }) =>
       isAvailable ? "underline" : "none"};
+      }
   }
 
   & img {

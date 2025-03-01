@@ -37,6 +37,14 @@ const ToggleButton = styled.button`
   font-weight: bold;
   cursor: pointer;
 
+  &:hover  {
+    color: ${({ color }) => color};
+  }
+
+  &:hover img {
+    filter: ${({ isDarkMode }) => (isDarkMode ? "brightness(0) saturate(100%) invert(62%) sepia(25%) saturate(465%) hue-rotate(184deg) brightness(100%) contrast(94%)" : "brightness(0)")};
+  }
+
  
 
 `;
@@ -53,7 +61,11 @@ function Header() {
   return (
     <StyledHeader>
       <h1>devfinder</h1>
-      <ToggleButton onClick={handleToggle}>
+      <ToggleButton
+        onClick={handleToggle}
+        color={isDarkMode ? "#90a4d4" : "#000"}
+        isDarkMode={isDarkMode}
+      >
         {isDarkMode ? "Light" : "Dark"}
         <img
           src={`./images/icon-${isDarkMode ? "sun" : "moon"}.svg`}
