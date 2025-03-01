@@ -11,6 +11,7 @@ const StyledUserDataDisplay = styled.div`
   gap: 2rem;
   padding: 2rem;
   margin-top: 2rem;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 850px) {
     width: 90vw;
@@ -193,26 +194,32 @@ function UserDataDisplay() {
 
   return (
     <StyledUserDataDisplay>
-     { isTablet ? '' : <AvatarImage src={userData.avatar_url} alt="" />}
+      {isTablet ? "" : <AvatarImage src={userData.avatar_url} alt="" />}
       <Data>
         <Flex>
-        { !isTablet ? '' : <AvatarImage src={userData.avatar_url} alt="" />}
+          {!isTablet ? "" : <AvatarImage src={userData.avatar_url} alt="" />}
           <TabletDataNextToImage>
             <Username>{userData.name ? userData.name : "Not found"}</Username>
             <Login>@{userData.login}</Login>
-            {!isTablet ? '' : <JoinDate>
-            Joined {format(new Date(userData.created_at), "dd MMM yyyy")}
-          </JoinDate>}
+            {!isTablet ? (
+              ""
+            ) : (
+              <JoinDate>
+                Joined {format(new Date(userData.created_at), "dd MMM yyyy")}
+              </JoinDate>
+            )}
           </TabletDataNextToImage>
-          {isTablet ? '' : <JoinDate>
-            Joined {format(new Date(userData.created_at), "dd MMM yyyy")}
-          </JoinDate>}
+          {isTablet ? (
+            ""
+          ) : (
+            <JoinDate>
+              Joined {format(new Date(userData.created_at), "dd MMM yyyy")}
+            </JoinDate>
+          )}
         </Flex>
 
         <UserBio>
-          {userData.bio
-            ? userData.bio
-            : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec odio, Quisque volutpat mattis eros."}
+          {userData.bio ? userData.bio : "This profile has no bio, yet."}
         </UserBio>
         <Grid>
           <div>

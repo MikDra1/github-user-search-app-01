@@ -11,6 +11,7 @@ const StyledSearchBar = styled.form`
   padding: 1rem 1rem;
   border-radius: 0.5rem;
   position: relative;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 850px) {
     width: 90vw;
